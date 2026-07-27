@@ -23,7 +23,6 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.27.0'
-          cache: true   # This handles caching automatically
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
