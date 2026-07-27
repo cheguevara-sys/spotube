@@ -1,9 +1,9 @@
-name: Build Spotube APK
+name: Build Guevarah Music
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -23,13 +23,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.27.0'
+          cache: true   # This handles caching automatically
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
-
-      # 🔧 The Fix: Set Flutter cache directory
-      - name: Set Flutter cache directory
-        run: flutter config --cache-dir "$HOME/.pub-cache"
 
       - name: Install Flutter dependencies
         run: flutter pub get
